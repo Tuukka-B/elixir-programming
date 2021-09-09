@@ -4,7 +4,7 @@ defmodule Ass1 do
   """
 
   @doc """
-  Instruction, Part 1:
+  Teacher's instructions for Part 1:
 
   Write an Elixir script that declares a variable and sets its value to 123.
   Print the value of the variable to the console.
@@ -30,7 +30,8 @@ defmodule Ass1 do
     someNumber = 123
     IO.puts("Value of the variable is #{someNumber}")
     someInput = IO.gets("Type some text\n")
-    IO.puts("You just typed #{someInput}")
+    response = "You just typed #{someInput}"
+    IO.puts(response)
 
   end
 end
