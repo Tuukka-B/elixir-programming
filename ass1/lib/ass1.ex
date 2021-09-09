@@ -19,6 +19,14 @@ defmodule Ass1 do
     Get the result of calculation (step 1) and print only the integer part of it into the console.
 
 
+  ## Teacher's instructions for Part 3:
+
+    Ask a line of text from the user (use IO.gets).
+    Print the number of characters in string that user entered.
+    Print the entered text in reverse.
+    Replace the word foo in entered text with bar and print resulted string into the console.
+
+
   ## Examples
 
       iex(1)> c "lib/ass1.ex"
@@ -46,6 +54,7 @@ defmodule Ass1 do
     IO.puts(response)
 
   end
+
   def part2 do
     {num1, num2} = {154, 78}
     someNumber = num1 / num2
@@ -54,6 +63,13 @@ defmodule Ass1 do
     IO.puts("Result of #{num1} divided by #{num2} is #{someNumber}")
     IO.puts("Integer result of #{num1} divided by #{num2} is #{integerDiv}")
     IO.puts("Rounded result of #{num1} divided by #{num2} is #{rounded}")
+
+  end
+  def part3 do
+    someString = IO.gets("Type some text\n")
+    IO.puts("You typed #{String.length(someString)-1} amount of characters") # for some reason we need to substract 1 from the string length to get the actual length
+    IO.puts("You typed #{String.reverse(someString)} in reverse")
+    IO.puts("If we replace all occurences of 'foo' from your typed text with 'bar', we get #{String.replace(someString, "foo", "bar")}")
 
   end
 end
