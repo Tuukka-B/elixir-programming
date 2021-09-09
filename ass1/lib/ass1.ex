@@ -4,13 +4,20 @@ defmodule Ass1 do
   """
 
   @doc """
-  Teacher's instructions for Part 1:
+  ## Teacher's instructions for Part 1:
 
-  Write an Elixir script that declares a variable and sets its value to 123.
-  Print the value of the variable to the console.
-  Add code that asks a text line from the user (use IO.gets).
-  Add text <- You said that to the text that user entered.
-  Print the combined text into the console.
+    Write an Elixir script that declares a variable and sets its value to 123.
+    Print the value of the variable to the console.
+    Add code that asks a text line from the user (use IO.gets).
+    Add text <- You said that to the text that user entered.
+    Print the combined text into the console.
+
+  ## Teacher's instructions for Part 2:
+
+    Write an Elixir script that calculates the result of 154 divided by 78 and prints it to the console.
+    Get the result of calculation (step 1) rounded to nearest integer and print it to console.
+    Get the result of calculation (step 1) and print only the integer part of it into the console.
+
 
   ## Examples
 
@@ -23,7 +30,12 @@ defmodule Ass1 do
       You just typed This is text
 
       :ok
-      iex(3)>
+      iex(3)> Ass1.part2()
+      Result of 154 divided by 78 is 1.9743589743589745
+      Integer result of 154 divided by 78 is 1
+      Rounded result of 154 divided by 78 is 2
+      :ok
+      iex(4)>
 
   """
   def part1 do
@@ -32,6 +44,16 @@ defmodule Ass1 do
     someInput = IO.gets("Type some text\n")
     response = "You just typed #{someInput}"
     IO.puts(response)
+
+  end
+  def part2 do
+    {num1, num2} = {154, 78}
+    someNumber = num1 / num2
+    rounded = round(someNumber)
+    integerDiv = div(num1, num2)
+    IO.puts("Result of #{num1} divided by #{num2} is #{someNumber}")
+    IO.puts("Integer result of #{num1} divided by #{num2} is #{integerDiv}")
+    IO.puts("Rounded result of #{num1} divided by #{num2} is #{rounded}")
 
   end
 end
