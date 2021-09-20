@@ -39,7 +39,7 @@ defmodule Ass1 do
 
   ## Examples
 
-      user@localhost:~/M2296/elixir-programming/assignments$ elixir lib/ass2.exs
+      user@localhost:~/M2296/elixir-programming/assignments$ elixir lib/ass1.exs
       === PART 1 ===
       Value of the variable is 123
       Type some text
