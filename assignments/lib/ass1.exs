@@ -39,33 +39,56 @@ defmodule Ass1 do
 
   ## Examples
 
-      iex(1)> c "lib/ass1.ex"
-      [Ass1]
-      iex(2)> Ass1.part1()
+      user@localhost:~/M2296/elixir-programming/assignments$ elixir lib/ass1.exs
+      === PART 1 ===
       Value of the variable is 123
       Type some text
       This is text
       You just typed This is text
 
-      :ok
-      iex(3)> Ass1.part2()
+      === PART 2 ===
       Result of 154 divided by 78 is 1.9743589743589745
       Integer result of 154 divided by 78 is 1
       Rounded result of 154 divided by 78 is 2
-      :ok
-      iex(4)>
+      == FINISHED ==
+
+      === PART 3 ===
+      Type some text
+      This is a foo text
+      You typed 18 amount of characters
+      You typed txet oof a si sihT in reverse
+      If we replace all occurences of 'foo' from your typed text with 'bar', we get This is a bar text
+
+      == FINISHED ==
+
+      === PART 4 ===
+      Give a number
+      3
+      Give a number
+      4
+      Give a number
+      5
+      Your input is 60 multiplied
+      List 1 is 1, 2, 3, list 2 is 4, 5, 6
+      The lists put together are 1, 2, 3, 4, 5, 6
+      In the beginning we have a tuple with values ok, fail and we extend it with value of canceled
+      The extended tuple then will be ok, fail, canceled
+      == FINISHED ==
 
   """
   def part1 do
+    IO.puts "=== PART 1 ==="
     someNumber = 123
     IO.puts("Value of the variable is #{someNumber}")
     someInput = IO.gets("Type some text\n")
     response = "You just typed #{someInput}"
     IO.puts(response)
 
+
   end
 
   def part2 do
+    IO.puts "=== PART 2 ==="
     {num1, num2} = {154, 78}
     someNumber = num1 / num2
     rounded = round(someNumber)
@@ -73,16 +96,20 @@ defmodule Ass1 do
     IO.puts("Result of #{num1} divided by #{num2} is #{someNumber}")
     IO.puts("Integer result of #{num1} divided by #{num2} is #{integerPart}")
     IO.puts("Rounded result of #{num1} divided by #{num2} is #{rounded}")
+    IO.puts "== FINISHED ==\n"
 
   end
   def part3 do
+    IO.puts "=== PART 3 ==="
     someString = IO.gets("Type some text\n")
     IO.puts("You typed #{String.length(someString)-1} amount of characters") # for some reason we need to substract 1 from the string length to get the actual string length
-    IO.puts("You typed #{String.reverse(someString)} in reverse")
+    IO.puts("You typed #{String.reverse(String.trim_trailing(someString, "\n"))} in reverse")
     IO.puts("If we replace all occurences of 'foo' from your typed text with 'bar', we get #{String.replace(someString, "foo", "bar")}")
+    IO.puts "== FINISHED ==\n"
 
   end
   def part4 do
+    IO.puts "=== PART 4 ==="
     multiply = fn(num1, num2, num3) -> num1*num2*num3 end
     concat = fn(list, anotherlist) -> Enum.concat(list, anotherlist) end
     [num3, num2, num1] = Ass1.getInput(3, [])
@@ -98,6 +125,7 @@ defmodule Ass1 do
     extendedTuple = List.to_tuple(Tuple.to_list(someTuple) ++ [:canceled])
     IO.puts "In the beginning we have a tuple with values #{Enum.join(Tuple.to_list(someTuple), ", ")} and we extend it with value of #{:canceled}"
     IO.puts "The extended tuple then will be #{Enum.join(Tuple.to_list(extendedTuple), ", ")}"
+    IO.puts "== FINISHED ==\n"
 
 
   end
@@ -112,3 +140,8 @@ defmodule Ass1 do
 
   end
 end
+
+Ass1.part1()
+Ass1.part2()
+Ass1.part3()
+Ass1.part4()

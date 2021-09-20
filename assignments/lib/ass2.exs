@@ -34,7 +34,7 @@ defmodule Ass2 do
     base_string = "99 bottles of beer on the wall"
     IO.puts "Word count for a sentence \"#{base_string}\" is #{length(String.split(base_string))}."
 
-    IO.puts "== FINISHED =="
+    IO.puts "== FINISHED ==\n"
   end
 
   def part2 do
@@ -44,7 +44,7 @@ defmodule Ass2 do
     words = Enum.map(word_list, fn word -> Ass2.convert_to_pig_latin(word) end)
 
     IO.puts "\"#{base_string}\" converted to pig latin is \n\"#{Enum.join(words, " ")}\""
-    IO.puts "== FINISHED =="
+    IO.puts "== FINISHED ==\n"
 
   end
 
