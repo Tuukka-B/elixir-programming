@@ -1,6 +1,6 @@
 defmodule Ass2 do
   @moduledoc """
-  Documentation for `Ass1`.
+  Documentation for `Ass2`.
   """
 
   @doc """
