@@ -63,7 +63,7 @@ defmodule Ass4 do
     mainloop =
     fn (resolve_color_func, main_func) ->
       resolve_color_func.(
-        String.trim_trailing(IO.gets("Give a color or a HTML color value: "), "\n"),
+        String.trim_trailing(IO.gets("Give a color or a HTML color code: "), "\n"),
         main_func,
         resolve_color_func)
     end
@@ -80,13 +80,13 @@ defmodule Ass4 do
         if found do
           IO.puts "Found color name of #{found}"
           main_func.(recurse_func, main_func)
-        else IO.puts "No colors or color codes found with the specified query.\nExiting..." end
+        else IO.puts "No color names or color codes found with the specified query.\nExiting..." end
       true ->  found = Enum.find_value(
         colors, fn {color_key, color_value} ->  if to_string(color_key) == color, do: color_value, else: false end)
         if found do
           IO.puts "Found color value of #{found}"
           main_func.(recurse_func, main_func)
-        else IO.puts "No colors or color codes found with the specified query.\nExiting..." end
+        else IO.puts "No color names or color codes found with the specified query.\nExiting..." end
       end
     end
 
