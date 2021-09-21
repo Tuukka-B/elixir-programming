@@ -107,6 +107,8 @@ defmodule Ass4 do
 
   # alternative way to do part 1 (comprised of the next 2 functions) is below
   # these are basically unused because I managed to do the same with anonymous functions
+  # I disliked passing around the colors list (like you see below) all the time so I wanted to get rid of that
+  # Now I'm passing around functions, and I guess that at least it is more appropriate for this course titled 'functional programming', if nothing else...
   def part1_mainloop(colors) do
    Ass4.part1_resolve_color(colors, String.trim_trailing(IO.gets("Give a color or a HTML color value: "), "\n"))
   end
