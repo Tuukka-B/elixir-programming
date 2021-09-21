@@ -88,7 +88,7 @@ defmodule Ass2 do
             word <> "ay"
 
           # something went wrong if the following condition triggers
-          # (or maybe the word began with a special letter or a number not included in the regular expression)
+          # (or maybe the word began with a special letter or a number not included in the regular expression checks)
           true -> word <> "ay"
         end
       end
