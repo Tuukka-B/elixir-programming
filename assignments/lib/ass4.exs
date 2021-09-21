@@ -62,31 +62,34 @@ defmodule Ass4 do
     #   * resolve color func that the main function will call
     mainloop =
     fn (resolve_color_func, main_func) ->
-      resolve_color_func.(
-        String.trim_trailing(IO.gets("Give a color or a HTML color code: "), "\n"),
-        main_func,
-        resolve_color_func)
+      result = resolve_color_func.(
+        String.trim_trailing(IO.gets("Give a color or a HTML color code: "), "\n"))
+      if result, do: main_func.(resolve_color_func, main_func)
     end
 
     # parameters for resolve color anonymous function:
     #   * color to resolve against the colors list
-    #   * main func to return to
-    #   * resolve color func (it itself) that the main function will call
     resolve_color =
-    fn (color, main_func, recurse_func) ->
+    fn (color) ->
       cond do
       String.slice(color, 0, 1) == "#"  ->
         found = Enum.find_value(colors, fn {color_key, color_value} ->  if to_string(color_value) == color, do: color_key, else: false end)
         if found do
           IO.puts "Found color name of #{found}"
-          main_func.(recurse_func, main_func)
-        else IO.puts "No color names or color codes found with the specified query.\nExiting..." end
+          true
+        else
+          IO.puts "No color names or color codes found with the specified query.\nExiting..."
+          false
+        end
       true ->  found = Enum.find_value(
         colors, fn {color_key, color_value} ->  if to_string(color_key) == color, do: color_value, else: false end)
         if found do
           IO.puts "Found color value of #{found}"
-          main_func.(recurse_func, main_func)
-        else IO.puts "No color names or color codes found with the specified query.\nExiting..." end
+          true
+        else
+          IO.puts "No color names or color codes found with the specified query.\nExiting..."
+          false
+        end
       end
     end
 
