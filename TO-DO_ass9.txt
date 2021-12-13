@@ -1,0 +1,50 @@
+Server 						-> Does not depend on anything
+
+Server Storage 				-> Does not depend on anything
+
+Server Connection Agent 	-> Depends on Server Storage
+
+
+Client						-> Depends on Client Storage
+	
+Client Storage				-> Does not depend on anything
+
+Client connection Agent		-> Depends on Client Storage
+
+
+Client supervisor:
+
+	- could start Storage
+
+Client.agent supervisor:
+
+	- could restart Client Connection agent when neseccary
+	- could restart Client when necessary
+
+
+Server supervisor:
+
+	- could start Storage
+	- could start Server
+
+Server.agent supervisor:
+
+	- could restart Server Connection agent when neseccary
+
+
+TO-DO:
+
+	make Client and Server start undepend on Storage
+		-- atomic name for storage
+
+	if Server crashes, socket is lost
+		-- maybe Storage should hold this too?
+
+	if ConnectionAgent crashes, server crashes
+		-- use start instead of start_link
+
+	if Client Storage crashes, Client & Client Connection agent crash
+		-- make Storage independent (use atomic name)
+
+	if Client Connection Agent crashes, Client crashes 
+		-- start Connection Agent with start instead of start_link

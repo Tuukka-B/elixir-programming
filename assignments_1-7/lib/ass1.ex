@@ -39,7 +39,8 @@ defmodule Ass1 do
 
   ## Examples
 
-      user@localhost:~/M2296/elixir-programming/assignments$ elixir lib/ass1.exs
+      user@localhost:~/M2296/elixir-programming/assignments_1-7$ iex -S mix
+      iex(1)> Ass1.ass1_mainloop
       === PART 1 ===
       Value of the variable is 123
       Type some text
@@ -77,18 +78,16 @@ defmodule Ass1 do
 
   """
   def part1 do
-    IO.puts "=== PART 1 ==="
+    IO.puts("=== PART 1 ===")
     someNumber = 123
     IO.puts("Value of the variable is #{someNumber}")
     someInput = IO.gets("Type some text\n")
     response = "You just typed #{someInput}"
     IO.puts(response)
-
-
   end
 
   def part2 do
-    IO.puts "=== PART 2 ==="
+    IO.puts("=== PART 2 ===")
     {num1, num2} = {154, 78}
     someNumber = num1 / num2
     rounded = round(someNumber)
@@ -96,52 +95,63 @@ defmodule Ass1 do
     IO.puts("Result of #{num1} divided by #{num2} is #{someNumber}")
     IO.puts("Integer result of #{num1} divided by #{num2} is #{integerPart}")
     IO.puts("Rounded result of #{num1} divided by #{num2} is #{rounded}")
-    IO.puts "== FINISHED ==\n"
-
+    IO.puts("== FINISHED ==\n")
   end
+
   def part3 do
-    IO.puts "=== PART 3 ==="
+    IO.puts("=== PART 3 ===")
     someString = IO.gets("Type some text\n")
-    IO.puts("You typed #{String.length(someString)-1} amount of characters") # for some reason we need to substract 1 from the string length to get the actual string length
-    IO.puts("You typed #{String.reverse(String.trim_trailing(someString, "\n"))} in reverse")
-    IO.puts("If we replace all occurences of 'foo' from your typed text with 'bar', we get #{String.replace(someString, "foo", "bar")}")
-    IO.puts "== FINISHED ==\n"
 
+    # for some reason we need to substract 1 from the string length to get the actual string length
+    IO.puts("You typed #{String.length(someString) - 1} amount of characters")
+    IO.puts("You typed #{String.reverse(String.trim_trailing(someString, "\n"))} in reverse")
+
+    IO.puts(
+      "If we replace all occurences of 'foo' from your typed text with 'bar', we get #{String.replace(someString, "foo", "bar")}"
+    )
+
+    IO.puts("== FINISHED ==\n")
   end
+
   def part4 do
-    IO.puts "=== PART 4 ==="
-    multiply = fn(num1, num2, num3) -> num1*num2*num3 end
-    concat = fn(list, anotherlist) -> Enum.concat(list, anotherlist) end
+    IO.puts("=== PART 4 ===")
+    multiply = fn num1, num2, num3 -> num1 * num2 * num3 end
+    concat = fn list, anotherlist -> Enum.concat(list, anotherlist) end
     [num3, num2, num1] = Ass1.getInput(3, [])
-    IO.puts "Your input is #{multiply.(num1, num2, num3)} multiplied"
+    IO.puts("Your input is #{multiply.(num1, num2, num3)} multiplied")
 
     list1 = [1, 2, 3]
     list2 = [4, 5, 6]
-    IO.puts "List 1 is #{Enum.join(list1, ", ")}, list 2 is #{Enum.join(list2, ", ")}"
-    IO.puts "The lists put together are #{Enum.join(concat.(list1, list2), ", ")}"
+    IO.puts("List 1 is #{Enum.join(list1, ", ")}, list 2 is #{Enum.join(list2, ", ")}")
+    IO.puts("The lists put together are #{Enum.join(concat.(list1, list2), ", ")}")
 
     someTuple = {:ok, :fail}
     # tuples can't be concatenated so we use a work-around
     extendedTuple = List.to_tuple(Tuple.to_list(someTuple) ++ [:canceled])
-    IO.puts "In the beginning we have a tuple with values #{Enum.join(Tuple.to_list(someTuple), ", ")} and we extend it with value of #{:canceled}"
-    IO.puts "The extended tuple then will be #{Enum.join(Tuple.to_list(extendedTuple), ", ")}"
-    IO.puts "== FINISHED ==\n"
 
+    IO.puts(
+      "In the beginning we have a tuple with values #{Enum.join(Tuple.to_list(someTuple), ", ")} and we extend it with value of #{:canceled}"
+    )
 
+    IO.puts("The extended tuple then will be #{Enum.join(Tuple.to_list(extendedTuple), ", ")}")
+    IO.puts("== FINISHED ==\n")
   end
 
   ## recursive function to get n (num) amount of inputs from the user and return them as an integer array
   def getInput(num, arr) when num == 0 do
     arr
-
   end
-  def getInput(num, arr) do
-    Ass1.getInput(num - 1, [ String.to_integer(String.trim_trailing(IO.gets("Give a number\n"), "\n")) | arr])
 
+  def getInput(num, arr) do
+    Ass1.getInput(num - 1, [
+      String.to_integer(String.trim_trailing(IO.gets("Give a number\n"), "\n")) | arr
+    ])
+  end
+
+  def ass1_mainloop do
+    part1()
+    part2()
+    part3()
+    part4()
   end
 end
-
-Ass1.part1()
-Ass1.part2()
-Ass1.part3()
-Ass1.part4()

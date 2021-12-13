@@ -1,9 +1,9 @@
-defmodule Ass1.MixProject do
+defmodule Assignment9.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ass1,
+      app: :assignment_9,
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,8 @@ defmodule Ass1.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Assignment9.Application, []}
     ]
   end
 
