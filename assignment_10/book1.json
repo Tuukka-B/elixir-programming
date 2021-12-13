@@ -1,0 +1,11 @@
+{
+   "book":{
+      "title":"Fellowship of the Ring, The",
+      "isbn":"9780007203543",
+      "price":10.0,
+      "description":"Tolkien's first book of the Lord of the Rings saga",
+      "authors":[
+         "J.R.R. Tolkien"
+      ]
+   }
+}

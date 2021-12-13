@@ -1,0 +1,11 @@
+{
+	"book":{
+		  "title":"Return of the King",
+		  "isbn":"9780007203567",
+		  "price":20.0,
+		  "description":"Tolkien's final book of the Lord of the Rings saga",
+		  "authors":[
+		     "J.R.R. Tolkien"
+		  ]
+	   }
+}

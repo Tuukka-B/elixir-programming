@@ -1,0 +1,47 @@
+{
+   "book":{
+      "title":"Fellowship of the Ring, The",
+      "isbn":"9780007203543",
+      "price":10.0,
+      "description":"Tolkien's first book of the Lord of the Rings saga",
+      "authors":[
+         "J.R.R. Tolkien"
+      ]
+   },
+	"book":{
+		  "title":"Two Towers",
+		  "isbn":"9780007203550",
+		  "price":10.0,
+		  "description":"Tolkien's second book of the Lord of the Rings saga",
+		  "authors":[
+		     "J.R.R. Tolkien"
+		  ]
+	   },
+	"book":{
+		  "title":"Return of the King",
+		  "isbn":"9780007203567",
+		  "price":10.0,
+		  "description":"Tolkien's final book of the Lord of the Rings saga",
+		  "authors":[
+		     "J.R.R. Tolkien"
+		  ]
+	   },
+	"book":{
+		  "title":"Clean Code",
+		  "isbn":"9780136083252",
+		  "price":10.0,
+		  "description":"Clean Code by Robert 'Bobby' C. Martin",
+		  "authors":[
+		     "Robert C. Martin"
+		  ]
+	   },
+	"book":{
+		  "title":"Clean Coder",
+		  "isbn":"9780132542883",
+		  "price":10.0,
+		  "description":"Clean Coder by Robert 'Bobby' C. Martin",
+		  "authors":[
+		     "Robert C. Martin"
+		  ]
+	   }
+}

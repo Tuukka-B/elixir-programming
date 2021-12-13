@@ -1,0 +1,11 @@
+{
+	"book":{
+		  "title":"Clean Code",
+		  "isbn":"9780136083252",
+		  "price":10.0,
+		  "description":"Clean Code by Robert 'Bobby' C. Martin",
+		  "authors":[
+		     "Robert C. Martin"
+		  ]
+	   }
+}

@@ -1,0 +1,11 @@
+{
+	"book":{
+		  "title":"Two Towers",
+		  "isbn":"9780007203550",
+		  "price":10.0,
+		  "description":"Tolkien's second book of the Lord of the Rings saga",
+		  "authors":[
+		     "J.R.R. Tolkien"
+		  ]
+	   }
+}
