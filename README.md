@@ -20,3 +20,37 @@
 * Assignment 9 is available in folder [assignments_9](./assignment_9/)
 
 * Assignment 10 is available in folder [assignments_10](./assignment_10/)
+
+
+## Highlights
+
+### TCP Server & Client
+* [Assignment 9](./assignment_9/)
+* Very comprehensive solution
+	* Supports named clients
+	* TELNET support
+	* Supports multiple clients at once (Group chat)
+
+### Blackjack
+* [Assignment 7](./assignments_1-7/lib/ass7)
+	* README [HERE](./assignments_1-7/)
+* Basic Blackjack game
+	* single player
+	* no stakes / betting
+	* otherwise follows all the blackjack rules
+	* pretty-printed cards (for example 11 = "jack")
+	
+### Periodical Timer
+* [Assignment 8](./assignment_8/)
+* A timer to repeat user-specified function at any interval
+* Features
+	* list timers
+	* modify repeat time
+	* named timers & cancel timer by name
+	* cancel-on-repeat: you can specify a return value to automatically cancel timer
+		* for example 
+		* you want to execute IO.puts "Hello"
+		* IO.puts always returns :ok normally
+		* if you specify :ok as cancel-on-return the repetition will terminate automatically upon first execution of timer
+
+### REST Controller
