@@ -54,3 +54,12 @@
 		* if you specify :ok as cancel-on-return the repetition will terminate automatically upon first execution of timer
 
 ### REST Controller
+* [Assignment 10](./assignment_10/)
+* BooksAPI based on [this tutorial](https://www.dairon.org/2020/07/06/simple-rest-api-with-elixir-phoenix.html)
+* Features:
+	* create book
+	* modify book
+	* delete book
+	* get all books
+	* get single book
+* JSON files + curl commands for testing stuff is included in the project
